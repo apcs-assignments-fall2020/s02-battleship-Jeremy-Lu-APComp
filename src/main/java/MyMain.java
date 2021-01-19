@@ -43,7 +43,10 @@ public class MyMain {
     // increasing length
     // You may assume that all Strings are lowercase 
     public static boolean inOrder(String[][] words) {
-        return false;
+        for (int col = 0; col < mat[0].length; col++) {
+			System.out.print(mat[row][col] + " ");
+		}
+		System.out.println();
     }
 
     public static void main(String[] args) {
