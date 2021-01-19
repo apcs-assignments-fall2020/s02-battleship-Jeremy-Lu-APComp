@@ -3,8 +3,15 @@ public class MyMain {
     // was a boat the specified coordinates. This
     // method also prints out an appropriate message
     public static boolean hit(boolean[][] board, int row, int col) { 
-        // YOUR CODE HERE
-        return false;
+        boolean hit_place = board[row][col];
+        if(hit_place == true){
+            System.out.println("There was a hit!");
+            return true;
+        }
+        else{
+            System.out.println("You missed!");
+            return false;
+        }
     }
 
 
@@ -13,7 +20,21 @@ public class MyMain {
     // The remaining pieces are placed in the direction given
     // by the direction input
     public static boolean[][] placeBoat(boolean[][] board, String direction, int boatLength, int row, int col) { 
-        // YOUR CODE HERE
+        board[row][col] = true;
+        if(direction.equals("right")){
+            for(int j = col; j<col+boatLength; j++){
+                board[row][j] = true;
+            }
+        }
+        else if(direction.equals("down")){
+            for(int i = row; i<row+boatLength; i++){
+                board[i][col] = true;
+            }
+        }
+        else{
+            System.out.println("Invalid input detected. Please try again.");
+            return null;
+        }
         return board;
     }
 
@@ -21,12 +42,20 @@ public class MyMain {
     // is in both alphabetical order and in order of 
     // increasing length
     // You may assume that all Strings are lowercase 
-    public static boolean inOrder(String[][] words) { 
-        // YOUR CODE HERE
+    public static boolean inOrder(String[][] words) {
         return false;
     }
 
     public static void main(String[] args) {
-        // You can test your code here
+        boolean[][] test_board = new boolean[5][5];
+        placeBoat(test_board, "down", 2, 3, 4);
+        for(int i = 0; i<test_board.length; i++){
+            for(int j = 0; j<test_board[0].length; j++){
+                System.out.print(test_board[i][j] + " ");
+            }
+            System.out.println();
+        }
+        System.out.println(hit(test_board, 3, 4)); //(testing row = 3 x col = 4)
+        System.out.println(hit(test_board, 1, 2)); //false scenario
     }
 }
