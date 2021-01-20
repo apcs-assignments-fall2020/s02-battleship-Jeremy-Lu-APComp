@@ -72,8 +72,10 @@ public class MyMain {
         System.out.println(hit(test_board, 1, 2)); //false scenario
         String[][] string_board = {{"a", "bd", "cdkd"}, {"b", "cka", "dks"}};
         String[][] string_board_false = {{"a", "wwwwwg", "cdkd"}, {"b", "cka", "dks"}};
+        /*
         System.out.println(inOrder(string_board));
         System.out.println(inOrder(string_board_false));
+        */
     }
 }
 //NOTE: Not sure why the inOrder method returns 'True' everytime but I'll ask during class.
