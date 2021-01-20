@@ -51,12 +51,12 @@ public class MyMain {
                 char after_char_conv = words[i+1][j+1].charAt(0);
                 int before_char = before_char_conv;
                 int after_char = after_char_conv;
-                if(before<after && before_char<after_char){
-                    return true;
+                if(before>after && before_char>after_char){
+                    return false;
                 }
             }
         }
-        return false;
+        return true;
     }
 
     public static void main(String[] args) {
@@ -70,5 +70,9 @@ public class MyMain {
         }
         System.out.println(hit(test_board, 3, 4)); //(testing row = 3 x col = 4)
         System.out.println(hit(test_board, 1, 2)); //false scenario
+        String[][] string_board = {{"a", "bd", "cdkd"}, {"b", "cka", "dks"}};
+        String[][] string_board_false = {{"a", "g", "cdkd"}, {"b", "cka", "dks"}};
+        System.out.println(inOrder(string_board));
+        System.out.println(inOrder(string_board_false));
     }
 }
