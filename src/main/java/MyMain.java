@@ -44,11 +44,11 @@ public class MyMain {
     // You may assume that all Strings are lowercase 
     public static boolean inOrder(String[][] words) {
         for(int i = 0; i<words.length; i++){
-            for(int j = 0; j<words[0].length-2; j++){
+            for(int j = 0; j<words[0].length-1; j++){
                 int before = words[i][j].length();
-                int after = words[i+1][j+1].length();
+                int after = words[i][j+1].length();
                 char before_char_conv = words[i][j].charAt(0);
-                char after_char_conv = words[i+1][j+1].charAt(0);
+                char after_char_conv = words[i][j+1].charAt(0);
                 int before_char = before_char_conv;
                 int after_char = after_char_conv;
                 if(before>after && before_char>after_char){
@@ -72,10 +72,9 @@ public class MyMain {
         System.out.println(hit(test_board, 1, 2)); //false scenario
         String[][] string_board = {{"a", "bd", "cdkd"}, {"b", "cka", "dks"}};
         String[][] string_board_false = {{"a", "wwwwwg", "cdkd"}, {"b", "cka", "dks"}};
-        /*
-        System.out.println(inOrder(string_board));
-        System.out.println(inOrder(string_board_false));
-        */
+        
+        System.out.println("true test: " + inOrder(string_board));
+        System.out.println("false test: " + inOrder(string_board_false));
+        
     }
 }
-//NOTE: Not sure why the inOrder method returns 'True' everytime but I'll ask during class.
