@@ -43,10 +43,20 @@ public class MyMain {
     // increasing length
     // You may assume that all Strings are lowercase 
     public static boolean inOrder(String[][] words) {
-        for (int col = 0; col < mat[0].length; col++) {
-			System.out.print(mat[row][col] + " ");
-		}
-		System.out.println();
+        for(int i = 0; i<words.length; i++){
+            for(int j = 0; j<words[0].length; j++){
+                int before = words[i][j].length();
+                int after = words[i+1][j+1].length();
+                char before_char_conv = words[i][j].charAt(0);
+                char after_char_conv = words[i+1][j+1].charAt(0);
+                int before_char = before_char_conv;
+                int after_char = after_char_conv;
+                if(before<after && before_char<after_char){
+                    return true;
+                }
+            }
+        }
+        return false;
     }
 
     public static void main(String[] args) {
