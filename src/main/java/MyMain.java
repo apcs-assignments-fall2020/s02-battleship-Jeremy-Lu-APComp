@@ -46,9 +46,9 @@ public class MyMain {
         for(int i = 0; i<words.length; i++){
             for(int j = 0; j<words[0].length; j++){
                 int before = words[i][j].length();
-                int after = words[i+1][j+1].length();
+                int after = words[(words.length-1)-i][(words.length-1)-j].length();
                 char before_char_conv = words[i][j].charAt(0);
-                char after_char_conv = words[i+1][j+1].charAt(0);
+                char after_char_conv = words[(words.length-1)-i][(words.length-1)-j].charAt(0);
                 int before_char = before_char_conv;
                 int after_char = after_char_conv;
                 if(before>after && before_char>after_char){
